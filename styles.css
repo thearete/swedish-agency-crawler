@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 720px;
+  max-height: 560px;
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  color: #1a1a1a;
+  background: #fff;
+}
+
+.container {
+  padding: 16px;
+}
+
+h1 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.btn {
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #005293;
+  color: #fff;
+  border-color: #005293;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #003d6e;
+}
+
+.btn-secondary {
+  background: #f5f5f5;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #e8e8e8;
+}
+
+.progress-section {
+  margin-bottom: 12px;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #005293;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  margin-top: 4px;
+  color: #666;
+  font-size: 12px;
+}
+
+.status-log {
+  max-height: 80px;
+  overflow-y: auto;
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 12px;
+  font-family: monospace;
+}
+
+.status-log p {
+  margin: 1px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.results-section h2 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+th, td {
+  padding: 5px 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #f0f0f0;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+}
+
+td a {
+  color: #005293;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+tr:nth-child(even) {
+  background: #fafafa;
+}
