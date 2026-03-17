@@ -53,10 +53,13 @@ function renderResults() {
   let count = 0;
 
   for (const agency of agencies) {
+    const switchboard = agency.switchboard ? `<a href="tel:${esc(agency.switchboard)}">${esc(agency.switchboard)}</a>` : '';
+
     if (agency.contacts.length === 0) {
       const tr = document.createElement('tr');
       tr.innerHTML = `
         <td>${esc(agency.name)}</td>
+        <td>${switchboard}</td>
         <td><em>No contact found</em></td>
         <td></td>
         <td></td>
@@ -64,11 +67,13 @@ function renderResults() {
       `;
       resultsBody.appendChild(tr);
     } else {
-      for (const contact of agency.contacts) {
+      for (let j = 0; j < agency.contacts.length; j++) {
+        const contact = agency.contacts[j];
         count++;
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td>${esc(agency.name)}</td>
+          <td>${j === 0 ? esc(agency.name) : ''}</td>
+          <td>${j === 0 ? switchboard : ''}</td>
           <td>${esc(contact.person || (contact.isIntlPage ? 'International page' : 'Contact page'))}</td>
           <td>${contact.emails.map(e => `<a href="mailto:${esc(e)}">${esc(e)}</a>`).join('<br>')}</td>
           <td>${contact.phones.map(p => esc(p)).join('<br>')}</td>
